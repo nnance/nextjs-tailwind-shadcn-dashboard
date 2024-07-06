@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Hero from "../components/hero"
-import Panel from "../components/ui/panel";
+import Hero from "@/components/hero";
+import Panel from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -30,23 +31,30 @@ export default function Home() {
         </div>
       </div>
       <Hero />
+      <div>
+        <Button>Click me</Button>
+      </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <Panel
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           title="Docs"
-          description="Find in-depth information about Next.js features and API."/>
+          description="Find in-depth information about Next.js features and API."
+        />
         <Panel
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           title="Learn"
-          description="Learn about Next.js in an interactive course with&nbsp;quizzes!"/>
+          description="Learn about Next.js in an interactive course with&nbsp;quizzes!"
+        />
         <Panel
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           title="Templates"
-          description="Explore starter templates for Next.js."/>
+          description="Explore starter templates for Next.js."
+        />
         <Panel
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           title="Deploy"
-          description="Instantly deploy your Next.js site to a shareable URL with Vercel."/>
+          description="Instantly deploy your Next.js site to a shareable URL with Vercel."
+        />
       </div>
     </main>
   );
