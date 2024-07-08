@@ -23,7 +23,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## To Do
 
 [x] Support routing to menu links
-[ ] Update layout to use common dashboard for all pages
+[x] Update layout to use common dashboard for all pages
+[ ] Fix mobile nav
 [ ] Complete basic interactivity like filtering
 [ ] Introduce Zod for type checking server API responses
 
