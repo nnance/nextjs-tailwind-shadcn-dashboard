@@ -30,7 +30,7 @@ export default function NavSheet() {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Link
-            href="#"
+            href="/"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <Home className="h-5 w-5" />
@@ -58,7 +58,7 @@ export default function NavSheet() {
             Customers
           </Link>
           <Link
-            href="#"
+            href="/settings"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <LineChart className="h-5 w-5" />

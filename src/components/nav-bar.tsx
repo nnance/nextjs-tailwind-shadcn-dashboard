@@ -33,8 +33,8 @@ export default function NavBar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href="#"
-              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              href="/"
+              className={`flex h-9 w-9 items-center justify-center rounded-lg text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${pathname === "/" ? "bg-accent" : ""}`}
             >
               <Home className="h-5 w-5" />
               <span className="sr-only">Dashboard</span>
@@ -95,8 +95,8 @@ export default function NavBar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href="#"
-              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              href="/settings"
+              className={`flex h-9 w-9 items-center justify-center rounded-lg text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${pathname === "/settings" ? "bg-accent" : ""}`}
             >
               <Settings className="h-5 w-5" />
               <span className="sr-only">Settings</span>
