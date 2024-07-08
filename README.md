@@ -37,7 +37,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Support routing to menu links
 [x] Update layout to use common dashboard for all pages
 [x] Fix mobile nav
-[ ] Fix missing images (user and products)
+[x] Fix missing images (user and products)
 [ ] Have common nav item for mobile and desktop
 [ ] Add pages for all nav items
 [ ] Add example signin page
