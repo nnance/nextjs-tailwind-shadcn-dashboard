@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Tooltip,
   TooltipTrigger,
@@ -15,6 +18,8 @@ import {
 } from "lucide-react";
 
 export default function NavBar() {
+  const pathname = usePathname();
+
   return (
     <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
       <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
@@ -40,8 +45,8 @@ export default function NavBar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href="#"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              href="/orders"
+              className={`flex h-9 w-9 items-center justify-center rounded-lg text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${pathname === "/orders" ? "bg-accent" : ""}`}
             >
               <ShoppingCart className="h-5 w-5" />
               <span className="sr-only">Orders</span>
@@ -52,8 +57,8 @@ export default function NavBar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href="#"
-              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              href="/products"
+              className={`flex h-9 w-9 items-center justify-center rounded-lg text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${pathname === "/products" ? "bg-accent" : ""}`}
             >
               <Package className="h-5 w-5" />
               <span className="sr-only">Products</span>
@@ -64,8 +69,8 @@ export default function NavBar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href="#"
-              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              href="/customers"
+              className={`flex h-9 w-9 items-center justify-center rounded-lg text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${pathname === "/customers" ? "bg-accent" : ""}`}
             >
               <Users2 className="h-5 w-5" />
               <span className="sr-only">Customers</span>
