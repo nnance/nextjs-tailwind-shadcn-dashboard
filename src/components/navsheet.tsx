@@ -1,6 +1,5 @@
 import {
   PanelLeft,
-  Link,
   Package2,
   Home,
   ShoppingCart,
@@ -10,6 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Link from "next/link";
 
 export default function NavSheet() {
   return (
@@ -37,21 +37,21 @@ export default function NavSheet() {
             Dashboard
           </Link>
           <Link
-            href="#"
+            href="/orders"
             className="flex items-center gap-4 px-2.5 text-foreground"
           >
             <ShoppingCart className="h-5 w-5" />
             Orders
           </Link>
           <Link
-            href="#"
+            href="/products"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <Package className="h-5 w-5" />
             Products
           </Link>
           <Link
-            href="#"
+            href="/customers"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <Users2 className="h-5 w-5" />
