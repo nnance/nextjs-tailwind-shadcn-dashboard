@@ -1,4 +1,16 @@
+# naxtjs-tailwind-shadcn-dashboard
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+An implementation of the Shadcn dashboard blocks with user interactivity like product filtering and navigation between pages. The data rendered on the pages is served by static API end points to avoid any external dependencies like a database.
+
+## Stack
+
+- Framework - [Next.js (App Router)](https://nextjs.org)
+- Language - [TypeScript](https://www.typescriptlang.org)
+- Styling - [Tailwind CSS](https://tailwindcss.com)
+- Components - [Shadcn UI](https://ui.shadcn.com/)
+- Formatting - [Prettier](https://prettier.io)
 
 ## Getting Started
 
@@ -25,8 +37,13 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Support routing to menu links
 [x] Update layout to use common dashboard for all pages
 [x] Fix mobile nav
+[ ] Fix missing images (user and products)
+[ ] Have common nav item for mobile and desktop
+[ ] Add pages for all nav items
+[ ] Add example signin page
 [ ] Complete basic interactivity like filtering
 [ ] Introduce Zod for type checking server API responses
+[ ] Verify if next/font is used
 
 ## Learn More
 
