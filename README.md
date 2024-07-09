@@ -39,6 +39,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Fix mobile nav
 [x] Fix missing images (user and products)
 [x] Complete basic interactivity like filtering and order selection
+[x] Make the breadcumbs work
 [ ] Add order details sample data for each order
 [ ] Add pages for all nav items
 [ ] Add example signin page
