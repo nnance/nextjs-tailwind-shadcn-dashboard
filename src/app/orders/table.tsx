@@ -52,7 +52,7 @@ function OrderRow(order: Order) {
         </Badge>
       </TableCell>
       <TableCell className="hidden md:table-cell">{date}</TableCell>
-      <TableCell className="text-right">${amount.toFixed(2)}</TableCell>
+      <TableCell className="text-right">{amount.toFixed(2)}</TableCell>
     </TableRow>
   );
 }
@@ -67,23 +67,17 @@ function OrderRows({ orders, filter }: { orders: Order[]; filter: string }) {
       order.status.toLowerCase() === filter.toLowerCase()
   );
 
-  const orderRows = filteredOrders.map((order, idx) => (
-    <OrderRow
-      key={idx}
-      id={order.id}
-      customer={order.customer}
-      type={order.type}
-      status={order.status}
-      date={order.date}
-      amount={order.amount}
-    />
-  ));
+  const orderRows = filteredOrders.map((order, idx) => {
+    const amount =
+      order.items.reduce((total, item) => total + item.price, 0) + 30;
+    return <OrderRow key={idx} {...order} amount={amount} />;
+  });
 
   return <TableBody>{orderRows}</TableBody>;
 }
 
 export default function OrdersTable({ orders }: { orders: Order[] }) {
-  const [selectedOrders, setSelectedOrders] = useState<Order[]>([]);
+  const [selectedOrders] = useState<Order[]>([]);
   const [filter, setFilter] = useState("fulfilled");
 
   const FilterItem = ({ value }: { value: string }) => (

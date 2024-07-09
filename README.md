@@ -1,8 +1,18 @@
 # naxtjs-tailwind-shadcn-dashboard
 
+An implementation of the Shadcn dashboard blocks with user interactivity like product filtering and navigation between pages. The data rendered on the pages is served by static API end points to avoid any external dependencies like a database.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-An implementation of the Shadcn dashboard blocks with user interactivity like product filtering and navigation between pages. The data rendered on the pages is served by static API end points to avoid any external dependencies like a database.
+## Features Include
+
+- App Router - Nextjs app router for client side navigation and server side rendering
+- Dashboard Layout - A common layout for all pages with a sidebar and top navigation bar
+- Navigation - A common navigation bar with links to all pages
+- Breadcrumbs - A common breadcrumbs component that dynamicallly updates with the current page and parent pages
+- Interactivity - Basic interactivity like product filtering and order selection
+- Sample Data - Complete set of sample data with static API Endpoints using Next.js API routes
+- Date & Currency Formatting - Uses the `Intl` API to format dates and currency amounts for concistent rendering on the server and client.
 
 ## Stack
 
@@ -41,6 +51,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Complete basic interactivity like filtering and order selection
 [x] Make the breadcumbs work
 [ ] Add order details sample data for each order
+[ ] Create date and currency components and use them consistently
+[ ] Make filters work on each page
 [ ] Add pages for all nav items
 [ ] Add example signin page
 [ ] Introduce Zod for type checking server API responses

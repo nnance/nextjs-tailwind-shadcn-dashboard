@@ -31,15 +31,30 @@ import {
   PaginationItem,
 } from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
-import { Order } from "@/types/orders";
+import { Order, OrderItem } from "@/types/orders";
 
 import { useContext } from "react";
 import { SelectedContext } from "./providers";
+import { formattedPrice } from "@/lib/utils";
+
+function OrderLines({ items }: { items: OrderItem[] }) {
+  return items.map(({ name, price }, idx) => {
+    return (
+      <li className="flex items-center justify-between" key={idx}>
+        <span className="text-muted-foreground">
+          {name}
+          <span>2</span>
+        </span>
+        <span>{formattedPrice(price)}</span>
+      </li>
+    );
+  });
+}
 
 export default function OrderDetails() {
   const { selectedData } = useContext(SelectedContext);
 
-  const details = ({ customer }: Order) => (
+  const details = ({ customer, items }: Order) => (
     <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
       <CardHeader className="flex flex-row items-start bg-muted/50">
         <div className="grid gap-0.5">
@@ -83,24 +98,17 @@ export default function OrderDetails() {
         <div className="grid gap-3">
           <div className="font-semibold">Order Details</div>
           <ul className="grid gap-3">
-            <li className="flex items-center justify-between">
-              <span className="text-muted-foreground">
-                Glimmer Lamps x <span>2</span>
-              </span>
-              <span>$250.00</span>
-            </li>
-            <li className="flex items-center justify-between">
-              <span className="text-muted-foreground">
-                Aqua Filters x <span>1</span>
-              </span>
-              <span>$49.00</span>
-            </li>
+            <OrderLines items={items} />
           </ul>
           <Separator className="my-2" />
           <ul className="grid gap-3">
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">Subtotal</span>
-              <span>$299.00</span>
+              <span>
+                {formattedPrice(
+                  items.reduce((total, item) => total + item.price, 0)
+                )}
+              </span>
             </li>
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">Shipping</span>
@@ -112,7 +120,11 @@ export default function OrderDetails() {
             </li>
             <li className="flex items-center justify-between font-semibold">
               <span className="text-muted-foreground">Total</span>
-              <span>$329.00</span>
+              <span>
+                {formattedPrice(
+                  items.reduce((total, item) => total + item.price, 0) + 30
+                )}
+              </span>
             </li>
           </ul>
         </div>

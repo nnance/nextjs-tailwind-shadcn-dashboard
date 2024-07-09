@@ -7,6 +7,14 @@ export interface Order {
   status: string;
   date: string;
   amount: number;
+  items: OrderItem[];
+}
+
+export interface OrderItem {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
 }
 
 export interface OrdersAPIResponse {
