@@ -38,9 +38,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Update layout to use common dashboard for all pages
 [x] Fix mobile nav
 [x] Fix missing images (user and products)
+[ ] Complete basic interactivity like filtering and order selection
 [ ] Add pages for all nav items
 [ ] Add example signin page
-[ ] Complete basic interactivity like filtering
 [ ] Introduce Zod for type checking server API responses
 [ ] Verify if next/font is used
 [ ] Have common nav item for mobile and desktop
