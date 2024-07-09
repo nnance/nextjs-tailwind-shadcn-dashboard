@@ -1,9 +1,7 @@
 "use client";
 
 import { File, ListFilter } from "lucide-react";
-
 import { Badge } from "@/components/ui/badge";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -30,12 +28,17 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Order } from "@/types/orders";
-import { useState } from "react";
+
+import { useContext, useState } from "react";
+import { SelectedContext } from "./providers";
 
 // return an order row
-function OrderRow({ customer, email, type, status, date, amount }: Order) {
+function OrderRow(order: Order) {
+  const { customer, email, type, status, date, amount } = order;
+  const { setSelectedData } = useContext(SelectedContext);
+
   return (
-    <TableRow>
+    <TableRow onClick={() => setSelectedData(order)}>
       <TableCell>
         <div className="font-medium">{customer}</div>
         <div className="hidden text-sm text-muted-foreground md:inline">
@@ -63,6 +66,7 @@ function OrderRows({ orders, filter }: { orders: Order[]; filter: string }) {
       filter.toLowerCase() === "all" ||
       order.status.toLowerCase() === filter.toLowerCase()
   );
+
   const orderRows = filteredOrders.map((order, idx) => (
     <OrderRow
       key={idx}

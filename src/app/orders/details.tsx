@@ -33,8 +33,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Order } from "@/types/orders";
 
-export default function OrderDetails({ order }: { order: Order }) {
-  return (
+import { useContext } from "react";
+import { SelectedContext } from "./providers";
+
+export default function OrderDetails() {
+  const { selectedData } = useContext(SelectedContext);
+
+  const details = ({ customer }: Order) => (
     <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
       <CardHeader className="flex flex-row items-start bg-muted/50">
         <div className="grid gap-0.5">
@@ -116,7 +121,7 @@ export default function OrderDetails({ order }: { order: Order }) {
           <div className="grid gap-3">
             <div className="font-semibold">Shipping Information</div>
             <address className="grid gap-0.5 not-italic text-muted-foreground">
-              <span>Liam Johnson</span>
+              <span>{customer}</span>
               <span>1234 Main St.</span>
               <span>Anytown, CA 12345</span>
             </address>
@@ -187,4 +192,19 @@ export default function OrderDetails({ order }: { order: Order }) {
       </CardFooter>
     </Card>
   );
+
+  const unselected = () => (
+    <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
+      <CardHeader className="flex flex-row items-start bg-muted/50">
+        <div className="grid gap-0.5">
+          <CardTitle className="group flex items-center gap-2 text-lg">
+            Select an Order
+          </CardTitle>
+          <CardDescription>To see order details</CardDescription>
+        </div>
+      </CardHeader>
+    </Card>
+  );
+
+  return selectedData ? details(selectedData) : unselected();
 }
