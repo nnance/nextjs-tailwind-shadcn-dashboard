@@ -34,15 +34,15 @@ import { SelectedContext } from "./providers";
 
 // return an order row
 function OrderRow(order: Order) {
-  const { customer, email, type, status, date, amount } = order;
+  const { customer, type, status, date, amount } = order;
   const { setSelectedData } = useContext(SelectedContext);
 
   return (
     <TableRow onClick={() => setSelectedData(order)}>
       <TableCell>
-        <div className="font-medium">{customer}</div>
+        <div className="font-medium">{customer.name}</div>
         <div className="hidden text-sm text-muted-foreground md:inline">
-          {email}
+          {customer.email}
         </div>
       </TableCell>
       <TableCell className="hidden sm:table-cell">{type}</TableCell>
@@ -72,7 +72,6 @@ function OrderRows({ orders, filter }: { orders: Order[]; filter: string }) {
       key={idx}
       id={order.id}
       customer={order.customer}
-      email={order.email}
       type={order.type}
       status={order.status}
       date={order.date}

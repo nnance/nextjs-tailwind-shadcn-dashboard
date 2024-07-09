@@ -1,7 +1,8 @@
+import { Customer } from "./customers";
+
 export interface Order {
   id: number;
-  customer: string;
-  email: string;
+  customer: Customer;
   type: string;
   status: string;
   date: string;

@@ -121,9 +121,11 @@ export default function OrderDetails() {
           <div className="grid gap-3">
             <div className="font-semibold">Shipping Information</div>
             <address className="grid gap-0.5 not-italic text-muted-foreground">
-              <span>{customer}</span>
-              <span>1234 Main St.</span>
-              <span>Anytown, CA 12345</span>
+              <span>{customer.name}</span>
+              <span>{customer.address}</span>
+              <span>
+                {customer.city}, {customer.state} {customer.zip}
+              </span>
             </address>
           </div>
           <div className="grid auto-rows-max gap-3">
@@ -139,18 +141,18 @@ export default function OrderDetails() {
           <dl className="grid gap-3">
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Customer</dt>
-              <dd>Liam Johnson</dd>
+              <dd>{customer.name}</dd>
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Email</dt>
               <dd>
-                <a href="mailto:">liam@acme.com</a>
+                <a href="mailto:">{customer.email}</a>
               </dd>
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Phone</dt>
               <dd>
-                <a href="tel:">+1 234 567 890</a>
+                <a href="tel:">+1 {customer.phone}</a>
               </dd>
             </div>
           </dl>

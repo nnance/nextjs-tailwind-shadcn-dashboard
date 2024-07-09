@@ -1,10 +1,10 @@
 import { Order } from "@/types/orders";
+import { customers } from "../customers/route";
 
 const orders: Order[] = [
   {
     id: 1,
-    customer: "Liam Johnson",
-    email: "liam@example.com",
+    customer: customers[0],
     type: "Sale",
     status: "Fulfilled",
     date: "2023-06-23",
@@ -12,8 +12,7 @@ const orders: Order[] = [
   },
   {
     id: 2,
-    customer: "Olivia Smith",
-    email: "olivia@example.com",
+    customer: customers[1],
     type: "Refund",
     status: "Declined",
     date: "2023-06-24",
@@ -21,8 +20,7 @@ const orders: Order[] = [
   },
   {
     id: 3,
-    customer: "Noah Williams",
-    email: "noah@example.com",
+    customer: customers[2],
     type: "Subscription",
     status: "Fulfilled",
     date: "2023-06-25",
@@ -30,8 +28,7 @@ const orders: Order[] = [
   },
   {
     id: 4,
-    customer: "Emma Brown",
-    email: "emma@example.com",
+    customer: customers[3],
     type: "Sale",
     status: "Fulfilled",
     date: "2023-06-26",
