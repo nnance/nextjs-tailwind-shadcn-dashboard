@@ -2,10 +2,9 @@
 
 An implementation of the Shadcn dashboard blocks with user interactivity like product filtering and navigation between pages. The data rendered on the pages is served by static API end points to avoid any external dependencies like a database.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Features Include
 
+- Shadcn Blocks - Includes all dashboard blocks
 - App Router - Nextjs app router for client side navigation and server side rendering
 - Dashboard Layout - A common layout for all pages with a sidebar and top navigation bar
 - Navigation - A common navigation bar with links to all pages
@@ -50,9 +49,10 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Fix missing images (user and products)
 [x] Complete basic interactivity like filtering and order selection
 [x] Make the breadcumbs work
-[ ] Add order details sample data for each order
+[x] Add order details sample data for each order
 [ ] Create date and currency components and use them consistently
-[ ] Make filters work on each page
+[x] Make filters work on each page
+[ ] Add product details page from blocks
 [ ] Add pages for all nav items
 [ ] Add example signin page
 [ ] Introduce Zod for type checking server API responses
@@ -60,6 +60,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [ ] Have common nav item for mobile and desktop
 
 ## Learn More
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 To learn more about Next.js, take a look at the following resources:
 

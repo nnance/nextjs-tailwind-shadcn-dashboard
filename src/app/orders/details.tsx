@@ -34,7 +34,7 @@ import { Separator } from "@/components/ui/separator";
 import { Order, OrderItem } from "@/types/orders";
 
 import { useContext } from "react";
-import { SelectedContext } from "./providers";
+import { SelectedOrderContext } from "../providers";
 import { formattedPrice } from "@/lib/utils";
 
 function OrderLines({ items }: { items: OrderItem[] }) {
@@ -52,7 +52,7 @@ function OrderLines({ items }: { items: OrderItem[] }) {
 }
 
 export default function OrderDetails() {
-  const { selectedData } = useContext(SelectedContext);
+  const [selectedOrder] = useContext(SelectedOrderContext);
 
   const details = ({ customer, items }: Order) => (
     <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
@@ -220,5 +220,5 @@ export default function OrderDetails() {
     </Card>
   );
 
-  return selectedData ? details(selectedData) : unselected();
+  return selectedOrder ? details(selectedOrder) : unselected();
 }
