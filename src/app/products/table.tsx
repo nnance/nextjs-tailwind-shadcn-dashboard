@@ -23,8 +23,10 @@ import {
 import { useContext } from "react";
 import { Product } from "@/types/products";
 import { FilterContext } from "../providers";
+import { useRouter } from "next/navigation";
 
 function ProductRow({
+  id,
   name,
   status,
   image,
@@ -32,8 +34,9 @@ function ProductRow({
   quantity,
   createdAt,
 }: Product) {
+  const router = useRouter();
   return (
-    <TableRow>
+    <TableRow onClick={() => router.push(`/products/details/?id=${id}`)}>
       <TableCell className="hidden sm:table-cell">
         <Image
           alt="Product image"

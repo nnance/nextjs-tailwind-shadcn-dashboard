@@ -1,9 +1,10 @@
 import { Product } from "@/types/products";
 
-const products: Product[] = [
+export const products: Product[] = [
   {
     id: 1,
     name: "Laser Lemonade Machine",
+    description: "A refreshing drink for a hot day.",
     status: "Draft",
     image: "/placeholder.svg",
     price: 499.99,
@@ -13,6 +14,7 @@ const products: Product[] = [
   {
     id: 2,
     name: "Hypernova Headphones",
+    description: "Immerse yourself in sound.",
     status: "Active",
     image: "/placeholder.svg",
     price: 129.99,
@@ -22,6 +24,7 @@ const products: Product[] = [
   {
     id: 3,
     name: "AeroGlow Desk Lamp",
+    description: "Illuminate your workspace.",
     status: "Active",
     image: "/placeholder.svg",
     price: 39.99,
@@ -31,6 +34,7 @@ const products: Product[] = [
   {
     id: 4,
     name: "TechTonic Energy Drink",
+    description: "Stay energized all day long.",
     status: "Draft",
     image: "/placeholder.svg",
     price: 2.99,
@@ -40,6 +44,7 @@ const products: Product[] = [
   {
     id: 5,
     name: "Gamer Gear Pro Controller",
+    description: "The ultimate gaming accessory.",
     status: "Active",
     image: "/placeholder.svg",
     price: 59.99,
@@ -49,6 +54,7 @@ const products: Product[] = [
   {
     id: 6,
     name: "Luminous VR Headset",
+    description: "Experience virtual reality like never before.",
     status: "Active",
     image: "/placeholder.svg",
     price: 199.99,

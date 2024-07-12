@@ -10,6 +10,7 @@ An implementation of the Shadcn dashboard blocks with user interactivity like pr
 - Navigation - A common navigation bar with links to all pages
 - Breadcrumbs - A common breadcrumbs component that dynamicallly updates with the current page and parent pages
 - Interactivity - Basic interactivity like product filtering and order selection
+- REST - A complete example of a REST API with static data
 - Sample Data - Complete set of sample data with static API Endpoints using Next.js API routes
 - Date & Currency Formatting - Uses the `Intl` API to format dates and currency amounts for concistent rendering on the server and client.
 
@@ -52,7 +53,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Add order details sample data for each order
 [ ] Create date and currency components and use them consistently
 [x] Make filters work on each page
-[ ] Add product details page from blocks
+[x] Add product details page from blocks
+[ ] Move data into JSON files
 [ ] Add pages for all nav items
 [ ] Add example signin page
 [ ] Introduce Zod for type checking server API responses
