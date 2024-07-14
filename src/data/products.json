@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Laser Lemonade Machine",
+    "description": "A refreshing drink for a hot day.",
+    "status": "Draft",
+    "image": "/placeholder.svg",
+    "price": 499.99,
+    "quantity": 25,
+    "createdAt": "2023-07-12 10:42 AM"
+  },
+  {
+    "id": 2,
+    "name": "Hypernova Headphones",
+    "description": "Immerse yourself in sound.",
+    "status": "Active",
+    "image": "/placeholder.svg",
+    "price": 129.99,
+    "quantity": 100,
+    "createdAt": "2023-10-18T15:21:00.000Z"
+  },
+  {
+    "id": 3,
+    "name": "AeroGlow Desk Lamp",
+    "description": "Illuminate your workspace.",
+    "status": "Active",
+    "image": "/placeholder.svg",
+    "price": 39.99,
+    "quantity": 50,
+    "createdAt": "2023-11-29T08:15:00.000Z"
+  },
+  {
+    "id": 4,
+    "name": "TechTonic Energy Drink",
+    "description": "Stay energized all day long.",
+    "status": "Draft",
+    "image": "/placeholder.svg",
+    "price": 2.99,
+    "quantity": 0,
+    "createdAt": "2023-12-25T23:59:00.000Z"
+  },
+  {
+    "id": 5,
+    "name": "Gamer Gear Pro Controller",
+    "description": "The ultimate gaming accessory.",
+    "status": "Active",
+    "image": "/placeholder.svg",
+    "price": 59.99,
+    "quantity": 75,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "name": "Luminous VR Headset",
+    "description": "Experience virtual reality like never before.",
+    "status": "Active",
+    "image": "/placeholder.svg",
+    "price": 199.99,
+    "quantity": 30,
+    "createdAt": "2024-02-14T14:14:00.000Z"
+  }
+]

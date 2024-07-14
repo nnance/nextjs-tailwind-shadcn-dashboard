@@ -2,7 +2,7 @@ import { Customer } from "./customers";
 
 export interface Order {
   id: number;
-  customer: Customer;
+  customer?: Customer;
   type: string;
   status: string;
   date: string;
@@ -19,4 +19,12 @@ export interface OrderItem {
 
 export interface OrdersAPIResponse {
   orders: Order[];
+}
+
+export interface GetOrderResponse {
+  order: Order;
+}
+
+export interface OrderJSON extends Omit<Order, "customer"> {
+  customerId: number;
 }

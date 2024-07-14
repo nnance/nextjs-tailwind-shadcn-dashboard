@@ -2,6 +2,8 @@
 
 An implementation of the Shadcn dashboard blocks with user interactivity like product filtering and navigation between pages. The data rendered on the pages is served by static API end points to avoid any external dependencies like a database.
 
+It offers several good patterns for building an application with Next.js App router, Tailwind CSS, and Shadcn UI components. It also includes a complete example of a REST API with static data and a complete set of sample data. It includes a combination of server side and client side components and how to use them together as well as dynamic routing with Page and API routes.
+
 ## Features Include
 
 - Shadcn Blocks - Includes all dashboard blocks
@@ -54,7 +56,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [ ] Create date and currency components and use them consistently
 [x] Make filters work on each page
 [x] Add product details page from blocks
-[ ] Move data into JSON files
+[x] Move data into JSON files
 [ ] Add pages for all nav items
 [ ] Add example signin page
 [ ] Introduce Zod for type checking server API responses
