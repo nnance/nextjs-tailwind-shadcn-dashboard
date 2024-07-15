@@ -35,7 +35,8 @@ import { Order, OrderItem } from "@/types/orders";
 
 import { useContext } from "react";
 import { SelectedOrderContext } from "../providers";
-import { formattedPrice } from "@/lib/utils";
+
+import Currency from "@/components/currancy";
 
 function OrderLines({ items }: { items: OrderItem[] }) {
   return items.map(({ name, price }, idx) => {
@@ -45,7 +46,9 @@ function OrderLines({ items }: { items: OrderItem[] }) {
           {name}
           <span>2</span>
         </span>
-        <span>{formattedPrice(price)}</span>
+        <span>
+          <Currency value={price} />
+        </span>
       </li>
     );
   });
@@ -105,25 +108,31 @@ export default function OrderDetails() {
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">Subtotal</span>
               <span>
-                {formattedPrice(
-                  items.reduce((total, item) => total + item.price, 0)
-                )}
+                <Currency
+                  value={items.reduce((total, item) => total + item.price, 0)}
+                />
               </span>
             </li>
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">Shipping</span>
-              <span>$5.00</span>
+              <span>
+                <Currency value={5.0} />
+              </span>
             </li>
             <li className="flex items-center justify-between">
               <span className="text-muted-foreground">Tax</span>
-              <span>$25.00</span>
+              <span>
+                <Currency value={25.0} />
+              </span>
             </li>
             <li className="flex items-center justify-between font-semibold">
               <span className="text-muted-foreground">Total</span>
               <span>
-                {formattedPrice(
-                  items.reduce((total, item) => total + item.price, 0) + 30
-                )}
+                <Currency
+                  value={
+                    items.reduce((total, item) => total + item.price, 0) + 30
+                  }
+                />
               </span>
             </li>
           </ul>
@@ -133,10 +142,10 @@ export default function OrderDetails() {
           <div className="grid gap-3">
             <div className="font-semibold">Shipping Information</div>
             <address className="grid gap-0.5 not-italic text-muted-foreground">
-              <span>{customer.name}</span>
-              <span>{customer.address}</span>
+              <span>{customer?.name}</span>
+              <span>{customer?.address}</span>
               <span>
-                {customer.city}, {customer.state} {customer.zip}
+                {customer?.city}, {customer?.state} {customer?.zip}
               </span>
             </address>
           </div>
@@ -153,18 +162,18 @@ export default function OrderDetails() {
           <dl className="grid gap-3">
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Customer</dt>
-              <dd>{customer.name}</dd>
+              <dd>{customer?.name}</dd>
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Email</dt>
               <dd>
-                <a href="mailto:">{customer.email}</a>
+                <a href="mailto:">{customer?.email}</a>
               </dd>
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Phone</dt>
               <dd>
-                <a href="tel:">+1 {customer.phone}</a>
+                <a href="tel:">+1 {customer?.phone}</a>
               </dd>
             </div>
           </dl>

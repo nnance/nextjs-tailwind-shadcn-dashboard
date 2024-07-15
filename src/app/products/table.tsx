@@ -24,6 +24,8 @@ import { useContext } from "react";
 import { Product } from "@/types/products";
 import { FilterContext } from "../providers";
 import { useRouter } from "next/navigation";
+import DateTime from "@/components/date-time";
+import Currency from "@/components/currancy";
 
 function ProductRow({
   id,
@@ -50,12 +52,12 @@ function ProductRow({
       <TableCell>
         <Badge variant="outline">{status}</Badge>
       </TableCell>
-      <TableCell className="hidden md:table-cell">${price}</TableCell>
+      <TableCell className="hidden md:table-cell">
+        <Currency value={price} />
+      </TableCell>
       <TableCell className="hidden md:table-cell">{quantity}</TableCell>
       <TableCell className="hidden md:table-cell">
-        {new Date(new Date(createdAt).toISOString()).toLocaleDateString(
-          "en-US"
-        )}
+        <DateTime date={createdAt} />
       </TableCell>
       <TableCell>
         <DropdownMenu>

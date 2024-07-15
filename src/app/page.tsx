@@ -25,6 +25,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Currency from "@/components/currancy";
 
 export default function Dashboard() {
   return (
@@ -36,7 +37,9 @@ export default function Dashboard() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$45,231.89</div>
+            <div className="text-2xl font-bold">
+              <Currency value={45231.89} />
+            </div>
             <p className="text-xs text-muted-foreground">
               +20.1% from last month
             </p>

@@ -53,7 +53,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [x] Complete basic interactivity like filtering and order selection
 [x] Make the breadcumbs work
 [x] Add order details sample data for each order
-[ ] Create date and currency components and use them consistently
+[x] Create date and currency components and use them consistently
 [x] Make filters work on each page
 [x] Add product details page from blocks
 [x] Move data into JSON files

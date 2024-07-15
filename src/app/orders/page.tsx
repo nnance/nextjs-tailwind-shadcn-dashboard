@@ -15,6 +15,7 @@ import { FilterProvider, SelectedOrderProvider } from "../providers";
 import { File } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FilterDropdown } from "../filter-dropdown";
+import Currency from "@/components/currancy";
 
 export default async function Orders() {
   const res = await fetch(`http://localhost:3000/api/orders`, {
@@ -42,7 +43,9 @@ export default async function Orders() {
             <Card x-chunk="dashboard-05-chunk-1">
               <CardHeader className="pb-2">
                 <CardDescription>This Week</CardDescription>
-                <CardTitle className="text-4xl">$1,329</CardTitle>
+                <CardTitle className="text-4xl">
+                  <Currency value={1329} />
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-xs text-muted-foreground">
@@ -56,7 +59,9 @@ export default async function Orders() {
             <Card x-chunk="dashboard-05-chunk-2">
               <CardHeader className="pb-2">
                 <CardDescription>This Month</CardDescription>
-                <CardTitle className="text-4xl">$5,329</CardTitle>
+                <CardTitle className="text-4xl">
+                  <Currency value={5329} />
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-xs text-muted-foreground">

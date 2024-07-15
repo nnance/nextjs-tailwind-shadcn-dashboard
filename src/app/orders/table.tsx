@@ -11,8 +11,10 @@ import {
 } from "@/components/ui/table";
 import { Order } from "@/types/orders";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FilterContext, SelectedOrderContext } from "../providers";
+import DateTime from "@/components/date-time";
+import Currency from "@/components/currancy";
 
 // return an order row
 function OrderRow(order: Order) {
@@ -22,9 +24,9 @@ function OrderRow(order: Order) {
   return (
     <TableRow onClick={() => setSelectedOrder(order)}>
       <TableCell>
-        <div className="font-medium">{customer.name}</div>
+        <div className="font-medium">{customer?.name}</div>
         <div className="hidden text-sm text-muted-foreground md:inline">
-          {customer.email}
+          {customer?.email}
         </div>
       </TableCell>
       <TableCell className="hidden sm:table-cell">{type}</TableCell>
@@ -33,8 +35,12 @@ function OrderRow(order: Order) {
           {status}
         </Badge>
       </TableCell>
-      <TableCell className="hidden md:table-cell">{date}</TableCell>
-      <TableCell className="text-right">{amount.toFixed(2)}</TableCell>
+      <TableCell className="hidden md:table-cell">
+        <DateTime date={date} />
+      </TableCell>
+      <TableCell className="text-right">
+        <Currency value={amount} />
+      </TableCell>
     </TableRow>
   );
 }
